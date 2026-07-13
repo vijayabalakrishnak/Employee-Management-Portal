@@ -15,10 +15,10 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps {
-                git 'https://github.com/yourusername/Employee-Management-Portal.git'
-            }
-        }
+    steps {
+        git 'https://github.com/vijayabalakrishnak/Employee-Management-Portal.git'
+    }
+}
 
         stage('Compile') {
             steps {
