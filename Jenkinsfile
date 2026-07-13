@@ -3,9 +3,9 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'
-        jdk 'JDK17'
-    }
+    maven 'Maven3'
+    jdk 'JDK21'
+}
 
     environment {
         IMAGE_NAME = "yourdockerhubusername/employee-app"
