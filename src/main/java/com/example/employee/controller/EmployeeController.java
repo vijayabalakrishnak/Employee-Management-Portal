@@ -1,7 +1,11 @@
 package com.example.employee.controller;
 
+import com.example.employee.model.Employee;
 import org.springframework.web.bind.annotation.*;
-import java.util.*;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/employees")
@@ -26,8 +30,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    public Employee updateEmployee(@PathVariable Long id,
-                                   @RequestBody Employee employee) {
+    public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         employees.put(id, employee);
         return employee;
     }

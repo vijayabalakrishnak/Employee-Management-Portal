@@ -1,0 +1,23 @@
+nohup: ignoring input
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.1)
+
+2026-07-13T12:59:07.141Z  INFO 206085 --- [           main] c.example.employee.EmployeeApplication   : Starting EmployeeApplication v1.0.0 using Java 21.0.11 with PID 206085 (/root/Employee-Management-Portal/target/employee-management-portal-1.0.0.jar started by root in /root/Employee-Management-Portal)
+2026-07-13T12:59:07.150Z  INFO 206085 --- [           main] c.example.employee.EmployeeApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-07-13T12:59:08.524Z  INFO 206085 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2026-07-13T12:59:08.542Z  INFO 206085 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-13T12:59:08.542Z  INFO 206085 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2026-07-13T12:59:08.582Z  INFO 206085 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-13T12:59:08.584Z  INFO 206085 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1335 ms
+2026-07-13T12:59:09.097Z  INFO 206085 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/'
+2026-07-13T12:59:09.121Z  INFO 206085 --- [           main] c.example.employee.EmployeeApplication   : Started EmployeeApplication in 2.616 seconds (process running for 3.161)
+2026-07-13T13:00:46.904Z  INFO 206085 --- [nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-13T13:00:46.905Z  INFO 206085 --- [nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-13T13:00:46.906Z  INFO 206085 --- [nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
