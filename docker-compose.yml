@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: employee_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin123
+      MYSQL_ROOT_PASSWORD: root123
+    ports:
+      - "3306:3306"
+
+  employee-app:
+    image: employee-app
+    container_name: employee-container
+    ports:
+      - "8087:8087"
+    depends_on:
+      - mysql
