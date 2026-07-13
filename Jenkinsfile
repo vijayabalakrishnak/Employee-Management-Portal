@@ -1,28 +1,26 @@
 pipeline {
-
     agent any
 
     tools {
-    maven 'Maven3'
-    jdk 'JDK21'
-}
+        maven 'Maven3'
+        jdk 'JDK21'
+    }
 
     environment {
-        IMAGE_NAME = "yourdockerhubusername/employee-app"
-        CONTAINER = "employee-app"
+        IMAGE_NAME = "employee-app"
     }
 
     stages {
 
         stage('Checkout') {
-    steps {
-        git 'https://github.com/vijayabalakrishnak/Employee-Management-Portal.git'
-    }
-}
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Compile') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn clean compile'
             }
         }
 
@@ -40,7 +38,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                sh 'docker build -t employee-app .'
             }
         }
 
@@ -58,8 +56,8 @@ pipeline {
                 sh '''
                 docker run -d \
                 --name employee-app \
-                -p 8080:8080 \
-                $IMAGE_NAME
+                -p 8087:8087 \
+                employee-app
                 '''
             }
         }
@@ -67,24 +65,8 @@ pipeline {
         stage('Health Check') {
             steps {
                 sh 'sleep 20'
-                sh 'curl http://localhost:8080'
+                sh 'curl http://localhost:8087/employees'
             }
         }
-
-        stage('Push Docker Image') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub',
-                usernameVariable: 'USER',
-                passwordVariable: 'PASS')]) {
-
-                    sh '''
-                    echo $PASS | docker login -u $USER --password-stdin
-                    docker push $IMAGE_NAME
-                    '''
-                }
-            }
-        }
-
     }
-
 }
