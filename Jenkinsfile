@@ -43,13 +43,15 @@ pipeline {
         }
 
         stage('Remove Old Container') {
-            steps {
-                sh '''
-                docker stop employee-app || true
-                docker rm employee-app || true
-                '''
-            }
-        }
+    steps {
+        sh '''
+        docker stop employee-app || true
+        docker rm employee-app || true
+        docker stop employee-container || true
+        docker rm employee-container || true
+        '''
+    }
+}
 
         stage('Run New Container') {
             steps {
